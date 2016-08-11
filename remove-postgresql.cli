@@ -1,0 +1,15 @@
+# Batch script to add the PostgreSQL driver to the JBoss EAP server configuration
+
+# Start batching commands
+batch
+
+# Remove PostgreSQL from the  datasources subsystem
+/subsystem=datasources/jdbc-driver=postgresql:remove
+
+# Run the batch commands
+run-batch
+
+# Reload the server configuration
+:reload
+
+
